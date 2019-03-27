@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Berita;
 use App\Kategori;
+use App\User;
 class HomeController extends Controller
 {
     /**
@@ -26,8 +27,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-      $Berita = Berita::all();
-        return view('home', ['berita' => $Berita]);
+      $User = User::all();
+        return view('home', ['users' => $User]);
     }
 
+    public function deleteUser($id)
+          {
+            $User = User::find($id);
+            $User->delete();
+            return redirect()->back();
+          }
 }

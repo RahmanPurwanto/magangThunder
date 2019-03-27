@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/boostrap.min.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
@@ -73,6 +75,8 @@
 
         @yield('content')
         @yield('crud')
+
+
     </div>
 
     <!-- Scripts -->

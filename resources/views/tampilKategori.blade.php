@@ -10,34 +10,28 @@
 		<div class="card mt-5">
 			<div class="card-body">
 				<h1 class="text-center"><a href="">Thunderlabs</a></h1>
-				<h5 class="text-center my-4">Tabel berita</h5>
+				<h5 class="text-center my-4">Kategori yang ada</h5>
 				<table class="table table-bordered table-striped">
 
 					<thead>
-						<a href="/Berita/tambah" class="btn btn-primary">Tambah Berita Baru</a>
+						<a href="/Kategori/tambahKat" class="btn btn-primary">Tambah Kategori</a>
 						&nbsp;
 						<a href="/home" class="btn btn-primary">Home</a>
 
-					  <br>
+						<br>
 						</br>
 						<tr>
-							<th>Judul Berita</th>
-							<th>Penulis</th>
-							<th>Tanggal</th>
-							<th>Isi berita</th>
+							<th>Nama Kategori</th>
 							<th width="15%">Edit</th>
 						</tr>
 					</thead>
 					<tbody>
-						@foreach($berita as $a)
+						@foreach($kategori as $a)
 						<tr>
-							<td>{{ $a->judul_berita }}</td>
-							<td>{{ $a->penulis_berita }}</td>
-                <td>{{ $a->tanggal_berita }}</td>
-  							<td>{{ $a->isi_berita }}</td>
+							<td>{{ $a->nama_kategori }}</td>
               <td>
-								<a href="/Berita/edit/{{ $a->id_berita }}" class="btn btn-warning">Edit</a>
-								<a href="/Berita/hapus/{{ $a->id_berita }}" class="btn btn-danger">Hapus</a>
+								<a href="/Kategori/edit/{{ $a->id_kategori }}" class="btn btn-warning">Edit</a>
+								<a href="/Kategori/hapus/{{ $a->id_kategori }}" class="btn btn-danger">Hapus</a>
 
               </td>
 						</tr>

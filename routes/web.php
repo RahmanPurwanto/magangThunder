@@ -40,5 +40,14 @@ Route::get('/Berita/edit/{id_berita}', 'cssController@edit');
 Route::put('/Berita/{id_berita}', 'cssController@update');
 Route::get('/Berita/hapus/{id_berita}', 'cssController@delete');
 
+Route::get('/Kategori', 'cssController@Katkat')->name('tampilKategori');
+Route::get('/Kategori/tambahKat', 'cssController@tambahKat')->name('tambahKat');
+Route::post('/Kategori/KaStore', 'cssController@KaStore');
+Route::get('/Kategori/edit/{id_kategori}', 'cssController@editKategori');
+Route::put('/Kategori/{id_kategori}', 'cssController@updateKat');
+Route::get('/Kategori/hapus/{id_kategori}', 'cssController@deleteKat');
+
+
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/User/hapus/{id}', 'HomeController@deleteUser');

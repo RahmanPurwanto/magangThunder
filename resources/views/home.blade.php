@@ -21,33 +21,52 @@
 
                 <div class="card mt-5">
                 <div class="card-body">
-                  <h3 class="text-center"><a href="https://www.malasngoding.com">Thunderlabs</a></h3>
-                  <h5 class="text-center my-4">Kabar berita hari ini</h5>
+                  <h3 class="text-center"><a href="">Thunderlabs</a></h3>
+                  <h5 class="text-center my-4">Pilih berita atau Kategori :</h5>
                   <table class="table table-bordered table-striped">
                     @section('crud')
                     <thead>
                       &nbsp;&nbsp;&nbsp;
-                      <a href="/Berita/tambah" class="btn btn-primary">Tambah Berita Baru</a>
+                      <a href="/Berita" class="btn btn-primary">Lihat Tabel Berita</a>
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                      <a align="left" href="/Kategori" class="btn btn-primary">Lihat Tabel Kategori</a>
+
                       <br>
                       </br>
+
+                      <h4 class="text-center my-4">Daftar Admin</h4>
                       <tr>
-                        <th width="20%">Judul Berita</th>
-                        <th width="15%">Penulis</th>
-                        <th width="15%">Tanggal</th>
-                        <th>Isi berita</th>
-                        <th width="25%">Pilihan</th>
+                        <th width="20%">nama admin</th>
+                        <th width="20%">email</th>
+                        <th width="20%">Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($berita as $a)
+                      @foreach($users as $a)
                       <tr>
-                        <td>{{ $a->judul_berita }}</td>
-                        <td>{{ $a->penulis_berita }}</td>
-                          <td>{{ $a->tanggal_berita }}</td>
-                          <td>{{ $a->isi_berita }}</td>
+                        <td>{{ $a->name }}</td>
+                        <td>{{ $a->email }}</td>
                         <td>
-                          <a href="/Berita/edit/{{ $a->id_berita }}" class="btn btn-warning">Edit</a>
-                          <a href="/Berita/hapus/{{ $a->id_berita }}" class="btn btn-danger">Hapus</a>
+                          <a href="/User/hapus/{{ $a->id }}" class="btn btn-danger">Hapus</a>
+                          <a href="https://mail.google.com" class="btn btn-warning">Hubungi via Email</a>
 
                         </td>
                       </tr>

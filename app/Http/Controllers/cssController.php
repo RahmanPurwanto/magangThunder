@@ -51,7 +51,7 @@ class cssController extends Controller
                   'isi_berita' => $request->isi_berita
                 ]);
 
-                  return redirect('/home');
+                  return redirect('/Berita');
                 }
 
               public function edit($id_berita)
@@ -103,6 +103,60 @@ class cssController extends Controller
           $Berita->kategori()->attach($kategori);
 
           return 'Anda Pintar';
+  }
 
-        }
+  public function Katkat()
+    {
+      $Kategori = Kategori::all();
+      return view('tampilKategori', ['kategori' => $Kategori]);// view,tabel,variabel
+    }
+
+    public function tambahKat(){
+      return view ('kategori_tambah');
+    }
+
+    public function KaStore(Request $request)
+    {
+      $this->validate($request,[
+        'nama_kategori' => 'required|min:5|max:30'
+        ]);
+
+      Kategori::create([
+        'nama_kategori' => $request->nama_kategori
+      ]);
+
+        return redirect('/Kategori');
+      }
+
+    public function editKategori($id_kategori)
+
+    {
+
+      $Kategori = Kategori::find($id_kategori);
+
+      return view('kategori_edit', ['kategori' => $Kategori]);
+      }
+
+    public function updateKat($id_kategori, Request $request)
+    {
+      $this->validate($request,[
+        'nama_kategori' => 'required|min:5|max:30'
+
+        ]);
+
+        $Kategori = Kategori::find($id_kategori);
+        $Kategori->nama_kategori = $request->nama_kategori;
+
+        $Kategori->save();
+        return redirect('/Berita');
+      }
+
+      public function deleteKat($id_kategori)
+      {
+        $Kategori = Kategori::find($id_kategori);
+        $Kategori->delete();
+        return redirect()->back();
+      }
+
+
 }
